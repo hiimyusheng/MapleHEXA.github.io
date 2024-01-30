@@ -6,7 +6,7 @@ function go() {
     var str3lv = document.getElementById('strong3').value;
     var str4lv = document.getElementById('strong4').value;
 
-    if (skilv == 0) {
+    if (skilv == 0 || isNaN(skilv)) {
         document.getElementById("skill2").innerHTML = 0;
         document.getElementById("skill3").innerHTML = 4400 - 0;
     }
@@ -126,13 +126,13 @@ function go() {
         document.getElementById("skill2").innerHTML = 3900;
         document.getElementById("skill3").innerHTML = 4400 - 3900;
     }
-    if (skilv == 30) {
+    if (skilv == 30 || skilv > 30) {
         document.getElementById("skill2").innerHTML = 4400;
         document.getElementById("skill3").innerHTML = 4400 - 4400;
     }
 
 
-    if (jinlv == 0) {
+    if (jinlv == 0 || isNaN(jinlv)) {
         document.getElementById("jinton2").innerHTML = 0;
         document.getElementById("jinton3").innerHTML = 2252 - 0;
     }
@@ -252,13 +252,13 @@ function go() {
         document.getElementById("jinton2").innerHTML = 2002;
         document.getElementById("jinton3").innerHTML = 2252 - 2002;
     }
-    if (jinlv == 30) {
+    if (jinlv == 30 || jinlv > 30) {
         document.getElementById("jinton2").innerHTML = 2252;
         document.getElementById("jinton3").innerHTML = 2252 - 2252;
     }
 
 
-    if (str1lv == 0) {
+    if (str1lv == 0 || isNaN(str1lv)) {
         document.getElementById("strong12").innerHTML = 0;
         document.getElementById("strong13").innerHTML = 3383 - 0;
     }
@@ -378,12 +378,12 @@ function go() {
         document.getElementById("strong12").innerHTML = 3008;
         document.getElementById("strong13").innerHTML = 3383 - 3008;
     }
-    if (str1lv == 30) {
+    if (str1lv == 30 || str1lv > 30) {
         document.getElementById("strong12").innerHTML = 3383;
         document.getElementById("strong13").innerHTML = 3383 - 3383;
     }
 
-    if (str2lv == 0) {
+    if (str2lv == 0 || isNaN(str2lv)) {
         document.getElementById("strong22").innerHTML = 0;
         document.getElementById("strong23").innerHTML = 3383 - 0;
     }
@@ -503,13 +503,13 @@ function go() {
         document.getElementById("strong22").innerHTML = 3008;
         document.getElementById("strong23").innerHTML = 3383 - 3008;
     }
-    if (str2lv == 30) {
+    if (str2lv == 30 || str2lv > 30) {
         document.getElementById("strong22").innerHTML = 3383;
         document.getElementById("strong23").innerHTML = 3383 - 3383;
     }
 
 
-    if (str3lv == 0) {
+    if (str3lv == 0 || isNaN(str3lv)) {
         document.getElementById("strong32").innerHTML = 0;
         document.getElementById("strong33").innerHTML = 3383 - 0;
     }
@@ -629,12 +629,12 @@ function go() {
         document.getElementById("strong32").innerHTML = 3008;
         document.getElementById("strong33").innerHTML = 3383 - 3008;
     }
-    if (str3lv == 30) {
+    if (str3lv == 30 || str3lv > 30) {
         document.getElementById("strong32").innerHTML = 3383;
         document.getElementById("strong33").innerHTML = 3383 - 3383;
     }
 
-    if (str4lv == 0) {
+    if (str4lv == 0 || isNaN(str4lv)) {
         document.getElementById("strong42").innerHTML = 0;
         document.getElementById("strong43").innerHTML = 3383 - 0;
     }
@@ -754,7 +754,7 @@ function go() {
         document.getElementById("strong42").innerHTML = 3008;
         document.getElementById("strong43").innerHTML = 3383 - 3008;
     }
-    if (str4lv == 30) {
+    if (str4lv == 30 || str4lv > 30) {
         document.getElementById("strong42").innerHTML = 3383;
         document.getElementById("strong43").innerHTML = 3383 - 3383;
     }
@@ -764,7 +764,9 @@ function go() {
     var stn2 = parseInt($("#strong22").html());
     var stn3 = parseInt($("#strong32").html());
     var stn4 = parseInt($("#strong42").html());
-    var alln1 = sn1 + jn1 + stn1 + stn2 + stn3 + stn4;
+    let havePieces = parseInt(document.getElementById("havePieces").value);
+    havePieces = isNaN(havePieces) ? 0 : havePieces;
+    var alln1 = sn1 + jn1 + stn1 + stn2 + stn3 + stn4 + havePieces;
     document.getElementById("all").innerHTML = alln1;
     var sn2 = parseInt($("#skill3").html());
     var jn2 = parseInt($("#jinton3").html());
@@ -772,7 +774,7 @@ function go() {
     var stn22 = parseInt($("#strong23").html());
     var stn32 = parseInt($("#strong33").html());
     var stn42 = parseInt($("#strong43").html());
-    var alln2 = sn2 + jn2 + stn12 + stn22 + stn32 + stn42;
+    var alln2 = sn2 + jn2 + stn12 + stn22 + stn32 + stn42 - havePieces;
     document.getElementById("all2").innerHTML = alln2;
     var x;
         x=alln1/201.84;
