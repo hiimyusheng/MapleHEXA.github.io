@@ -143,7 +143,7 @@ function go() {
     var alln2 = s_request + jn1_request + jn2_request + stn1_request + stn2_request + stn3_request + stn4_request + com1_request - havePieces;
     document.getElementById("all2").innerHTML = alln2;
     var x;
-        x=alln1/201.84;
+        x=alln1/287.04;
         document.getElementById("ooo1").innerHTML = x.toFixed(2)+"%";
     var vvv2 = document.getElementById("vvv");
     vvv2.setAttribute('value',alln1);
