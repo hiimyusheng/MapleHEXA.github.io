@@ -193,7 +193,8 @@ function go() {
     if (alln1 == 28704) {
         document.getElementById("no1").innerHTML = "誇大了吧臭宅。";
     }
-    document.getElementById("no2").innerHTML = "惡魔品質製";
+    document.getElementById("no2").style.display = "inline-block";
+    document.getElementById("no3").style.display = "inline-block";
 }
 
 var jintonArray = [
